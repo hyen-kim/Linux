@@ -1,0 +1,36 @@
+Section05. 인터넷 서비스 설정
+
+< 네트워크 인터페이스 설정 >
+- 리눅스는 다양한 네트워크를 지원
+- 일반적으로 네트워크 인터페이스는 자동으로 인식되지만 
+  자동으로 인식되지 않을 경우 수동으로 설정해야한다.
+- 네트워크 인터페이스 수동 설정 방법은 컴파일된 인터페이스 모듈을 커널에 적재하는 것
+
+< 네트워크 설정 파일들 >
+- /etc/sysconfig/network : 네트워크의 기본 정보가 설정되어 있는 파일
+- /etc/sysconfig/network-scripts/ifcfg-ethX : 지정된 네트워크 인터페이스의 네트워크 환경 설정 정보가 저장
+- /etc/resolv.conf : 기본적으로 사용할 도메인명과 네임서버를 설정
+- /etc/hosts : IP 주소와 도메인 주소를 1:1로 등록하여 도메인에 대한 IP 주소를 조회하도록 한다.
+- /etc/host.conf : DNS 서비스를 제공할 때 먼저 이 파일을 검사하여 파일의 설정에 따라 서비스
+
+< 네트워크 설정 >
+IP 주소 설정
+- 네트워크 설정 파일로 주소 설정 : /etc/sysconfig/network 
+			     /etc/sysconfig/network-scripts/ifcfg-ethX로 IP주소를 할당
+- 명령어를 이용한 주소 설정 : 명령어 ifconfig를 이용하여 IP주소를 할당
+- 유틸리티를 이용한 주소 설정 : netconfig, system-config-network, redhat-config-network 등의
+  다양한 유틸리티를 이용하여 주소를 설정
+
+라우팅 테이블 설정 및 관리
+- 라우팅이란 송신 패킷이 목적지까지 전송할 수 있도록 경로를 설정
+- 송신 패킷은 라우팅 테이블에 목적지 경로 정보가 있다면 해당 경로로 패킷을 전송
+- 명령어 route는 라우팅 테이블을 설정하거나 확인
+- 목적지 경로가 라우팅 테이블에 없다면 디폴트게이트웨이로 트래픽을 전송할 수 있게 
+   라우팅 테이블을 설정
+
+< 네트워크 관련 명령어 >
+- TCP/IP 주소 설정 정보 확인 : ifconfig, nslookup
+- 네트워크 경로 상태 확인 : ping, traceroute
+- 네트워크 연결 상태 확인 : netstat
+- 라우팅 테이블 확인 : route
+- NIC 상태 확인 : ethtool, mii-tool, arp
