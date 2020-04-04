@@ -2,7 +2,7 @@
 / 	-> / 				-> ../../..
 lib 	-> /usr/lib			-> ../../../usr/lib
 data1 	-> /home/user1/ch3/data1	-> ../ch3/data1
-test 	-> /home/user1/ch2/test		-> /test
+test 	-> /home/user1/ch2/test		-> ./test
 hosts	-> /etc/hosts			-> ../../../etc/hosts
 
 2. 파일의 종류를 구분하기 위해서 ls 명령에 지정하는 옵션은 무엇인가 ?
