@@ -1,0 +1,21 @@
+01. 셸의 3가지 주요기능
+-  명령어 해석기 기능, 프로그래밍 기능, 사용자 환경 설정 기능
+
+
+02. 특수문자의 *와 ?의 차이점 
+특수문자 *은 0개 이상의 문자를 대체하므로 문자가 와도 상관이 없고,
+안와도 상관이 없다. 하지만 특수문자 ?는 길이가 1인 문자를 나타낸다.
+그러므로 만약 
+ls -l a*
+-rw-rw-r--. 1 user1 user1 0  3월 31 16:54 a.txt
+-rw-rw-r--. 1 user1 user1 0  4월 14 18:54 aaa
+-rw-rw-r--. 1 user1 user1 0  4월 14 18:54 aab
+-rw-rw-r--. 1 user1 user1 0  4월 14 18:54 aac
+
+[user1@localhost ~]$ ls -l a?
+ls: cannot access 'a?': No such file or directory
+이런식으로 파일을 찾을 수 없는 이유는 한문자 밖에 대체 하지 못하기 때문이다.
+
+[user1@localhost ~]$ ls -l a?a
+-rw-rw-r--. 1 user1 user1 0  4월 14 18:54 aaa
+이런식으로해야 원하는 결과를 얻을 수 있다.
