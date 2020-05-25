@@ -1,0 +1,8 @@
+systemctl is-active colord.service
+systemctl stop colord.service
+systemctl status colord.serive
+systemctl start colord.service
+systemctl status colord.serive
+
+.. 저 페도라가 안켜져요.. 그래서 이렇게 다시 첨부합니다..
+201907033 김혜인..
